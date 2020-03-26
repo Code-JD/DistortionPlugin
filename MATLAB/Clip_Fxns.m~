@@ -1,0 +1,25 @@
+%% Setup
+x = linspace(-100, 100, 201);
+htan = tanh(0.1 .* x);
+softmax = 2 ./ (1 + exp(-0.25 .* x)) - 1;
+itan = (2 / pi) .* atan(0.25 .* x);
+
+%% Plot
+figure;
+hold on;
+subplot(3, 1, 1);
+plot(x, itan, 'r', 'LineWidth', 2);
+xlabel('Input');
+ylabel('Output');
+title('Arc Tan');
+subplot(3, 1, 2);
+plot(x, htan, 'b', 'LineWidth', 2);
+xlabel('Input');
+ylabel('Output');
+title('Tanh');
+subplot(3, 1, 3);
+plot(x, softmax, 'g', 'LineWidth', 2);
+xlabel('Input');
+ylabel('Output');
+
+
